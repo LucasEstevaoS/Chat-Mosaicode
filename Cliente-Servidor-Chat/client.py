@@ -8,13 +8,19 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 #A execucao espera 3 argumentos, script, IP address e port number
 
+try:
+    IP_address = socket.gethostbyname('alice.dcomp.ufsj.edu.br')
+    # IP_address = "192.168.0.104"
+    Port = 3001
+except socket.error:
+    print "deu erro no socket"
 #if len(sys.argv) != 3: 
 #    print "Correct usage: script, IP address, port number"
 #    exit() 
 #IP_address = str(sys.argv[1]) 
 #Port = int(sys.argv[2]) 
-IP_address = "192.168.0.104"
-Port = 5500
+#IP_address = "200.17.66.141"
+#Port = 3000
 server.connect((IP_address, Port)) 
   
 while True: 
